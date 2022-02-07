@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express(); // All the functions in express are now in app.
 const MongoClient = require('mongodb').MongoClient;
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 80;
 require('dotenv').config();
 
 // MONGODB CONNECTION
