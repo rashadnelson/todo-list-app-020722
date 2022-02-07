@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express(); // All the functions in express are now in app.
 const MongoClient = require('mongodb').MongoClient;
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 require('dotenv').config();
 
 // MONGODB CONNECTION
@@ -105,6 +105,6 @@ app.put('/markUnComplete', (request, response) => {
 });
 
 // SERVER TO LISTEN TO PORT
-app.listen(process.env.PORT || PORT, () => {
+app.listen(PORT, () => {
 	console.log(`Server running on port ${PORT}`);
 });
