@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express(); // All the functions in express are now in app.
 const MongoClient = require('mongodb').MongoClient;
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 8000;
 require('dotenv').config();
 
 // MONGODB CONNECTION
@@ -18,6 +18,7 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
 
 // SERVER AND MIDDLEWARE SETUP
 app.set('view engine', 'ejs');
+app.set('port', PORT);
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
